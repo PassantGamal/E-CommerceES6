@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHOP.CO – Find Clothes That Match Your Style</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Integral+CF:wght@400;700&family=Satoshi:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="top-bar" id="topBar">
+      <p>
+        Sign up and get 20% off to your first order. <a href="#">Sign Up Now</a>
+      </p>
+      <button
+        class="top-bar-close"
+        onclick="document.getElementById('topBar').style.display = 'none'"
+      >
+        ✕
+      </button>
+    </div>
+
+    <nav class="navbar" id="navbar"></nav>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Find Clothes That Matches Your Style</h1>
+        <p>
+          Browse through our diverse range of meticulously crafted garments,
+          designed to bring out your individuality and cater to your sense of
+          style.
+        </p>
+        <button class="btn-primary" onclick="location.href = 'category.html'">
+          Shop Now
+        </button>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num">200+</span
+            ><span class="stat-label">International Brands</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">2,000+</span
+            ><span class="stat-label">High-Quality Products</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">30,000+</span
+            ><span class="stat-label">Happy Customers</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="images/hero.webp" alt="Fashion Models" />
+      </div>
+    </section>
+
+    <section class="brands-bar">
+      <img src="images/preview (4).webp" alt="Versace" />
+      <img src="images/preview (3).webp" alt="Zara" />
+      <img src="images/preview (2).webp" alt="Gucci" />
+      <img src="images/preview (1).webp" alt="Prada" />
+      <img src="images/preview.webp" alt="Calvin Klein" />
+    </section>
+
+    <section class="products-section">
+      <h2 class="section-title">New Arrivals</h2>
+      <div class="products-grid" id="newArrivalsGrid"></div>
+      <div class="view-all-wrap">
+        <button class="btn-outline" onclick="location.href = 'category.html'">
+          View All
+        </button>
+      </div>
+    </section>
+
+    <hr style="border: none; border-top: 1px solid #f0f0f0; margin: 0 60px" />
+
+    <section class="products-section">
+      <h2 class="section-title">Top Selling</h2>
+      <div class="products-grid" id="topSellingGrid"></div>
+      <div class="view-all-wrap">
+        <button class="btn-outline" onclick="location.href = 'category.html'">
+          View All
+        </button>
+      </div>
+    </section>
+
+    <section class="style-section">
+      <div class="style-container">
+        <h2 class="section-title">Browse by Dress Style</h2>
+        <div class="style-grid">
+          <div class="style-row">
+            <div
+              class="style-card style-casual"
+              onclick="location.href = 'category.html?style=casual'"
+            >
+              <img src="images/casual.webp" alt="Casual" loading="lazy" />
+            </div>
+            <div
+              class="style-card style-formal"
+              onclick="location.href = 'category.html?style=formal'"
+            >
+              <img src="images/formal.webp" alt="Formal" loading="lazy" />
+            </div>
+          </div>
+          <div class="style-row">
+            <div
+              class="style-card style-party"
+              onclick="location.href = 'category.html?style=party'"
+            >
+              <img src="images/girl.webp" alt="Party" loading="lazy" />
+            </div>
+            <div
+              class="style-card style-gym"
+              onclick="location.href = 'category.html?style=gym'"
+            >
+              <img src="images/gym.webp" alt="Gym" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials-section">
+      <div class="testimonials-header">
+        <h2 class="section-title">Our Happy Customers</h2>
+        <div class="testimonial-arrows">
+          <button id="scrollPrev" aria-label="Previous">
+            <i class="fas fa-arrow-left"></i>
+          </button>
+          <button id="scrollNext" aria-label="Next">
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+      <div class="testimonials-grid" id="testimonialsGrid"></div>
+    </section>
+
+    <section class="newsletter">
+      <div class="newsletter-content">
+        <h2>Stay Upto Date About Our Latest Offers</h2>
+        <div class="newsletter-form">
+          <div class="input-wrap">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Enter your email address" />
+          </div>
+          <button class="btn-white">Subscribe to Newsletter</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" id="footer"></footer>
+
+    <script type="module" src="js/pages/home.js"></script>
+  </body>
+</html>

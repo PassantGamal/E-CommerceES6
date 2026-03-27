@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHOP.CO – Product</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Integral+CF:wght@400;700&family=Satoshi:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="top-bar" id="topBar">
+      <p>
+        Sign up and get 20% off to your first order. <a href="#">Sign Up Now</a>
+      </p>
+      <button
+        class="top-bar-close"
+        onclick="document.getElementById('topBar').style.display = 'none'"
+      >
+        ✕
+      </button>
+    </div>
+
+    <nav class="navbar" id="navbar"></nav>
+
+    <div class="page-wrapper">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fas fa-chevron-right"></i>
+        <a href="category.html">Shop</a>
+        <i class="fas fa-chevron-right"></i>
+        <a href="category.html">Men</a>
+        <i class="fas fa-chevron-right"></i>
+        <span id="breadcrumbCurrent">T-Shirts</span>
+      </div>
+
+      <section class="product-info-section">
+        <div class="product-gallery">
+          <div class="thumb-list" id="thumbList"></div>
+          <div class="main-img-wrap">
+            <img id="pMainImg" src="" alt="Product" />
+          </div>
+        </div>
+
+        <div class="product-details-wrap">
+          <h1 id="pTitle"></h1>
+          <div class="product-rating" id="pRating"></div>
+          <div class="product-price-wrap" id="pPriceArea"></div>
+          <p class="product-desc" id="pDesc"></p>
+
+          <div class="product-divider"></div>
+
+          <p class="product-option-label">Select Colors</p>
+          <div class="colors-grid" id="pColors"></div>
+
+          <div class="product-divider"></div>
+
+          <p class="product-option-label">Choose Size</p>
+          <div class="sizes-grid" id="pSizes"></div>
+
+          <div class="product-divider"></div>
+
+          <div class="product-actions">
+            <div class="p-qty-control">
+              <button class="qty-btn" id="qtyMinus">−</button>
+              <span id="pQty">1</span>
+              <button class="qty-btn" id="qtyPlus">+</button>
+            </div>
+            <button class="btn-primary btn-add-to-cart" id="btnAddToCart">
+              <i class="fas fa-shopping-cart"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="tabs-section">
+        <div class="tab-header">
+          <button class="tab-btn" data-tab="details">Product Details</button>
+          <button class="tab-btn active" data-tab="reviews">
+            Rating &amp; Reviews
+          </button>
+          <button class="tab-btn" data-tab="faqs">FAQs</button>
+        </div>
+
+        <div id="tab-details" class="tab-content">
+          <p class="tab-desc">
+            This product is crafted with premium quality materials designed to
+            last. It features a modern cut that flatters all body types, with
+            attention to detail in every stitch. Perfect for both casual and
+            semi-formal occasions.
+          </p>
+        </div>
+
+        <div id="tab-reviews" class="tab-content active">
+          <div class="reviews-header">
+            <span class="reviews-title">
+              All Reviews <span class="reviews-count" id="reviewCount"></span>
+            </span>
+            <div class="reviews-actions">
+              <button
+                class="btn-outline"
+                style="padding: 10px 24px; font-size: 14px"
+              >
+                Write a Review
+              </button>
+            </div>
+          </div>
+          <div class="reviews-grid" id="reviewsGrid"></div>
+          <button class="btn-load-more" id="btnLoadMore">
+            Load More Reviews
+          </button>
+        </div>
+
+        <div id="tab-faqs" class="tab-content">
+          <div class="faq-item">
+            <strong>What is the return policy?</strong>
+            <p>
+              We accept returns within 30 days of purchase. Items must be in
+              original condition with tags attached.
+            </p>
+          </div>
+          <div class="faq-item">
+            <strong>How long does shipping take?</strong>
+            <p>
+              Standard shipping takes 3–5 business days. Express shipping (1–2
+              days) is also available at checkout.
+            </p>
+          </div>
+          <div class="faq-item">
+            <strong>How do I find my size?</strong>
+            <p>
+              Check our size guide on each product page. When in doubt, we
+              recommend sizing up for a comfortable fit.
+            </p>
+          </div>
+          <div class="faq-item">
+            <strong>Are the colors accurate?</strong>
+            <p>
+              We do our best to represent colors accurately, but slight
+              variations may occur due to monitor settings.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="related-section">
+        <h2 class="section-title">You Might Also Like</h2>
+        <div class="cat-products-grid" id="relatedGrid"></div>
+      </section>
+    </div>
+
+    <section class="newsletter">
+      <div class="newsletter-content">
+        <h2>Stay Upto Date About Our Latest Offers</h2>
+        <div class="newsletter-form">
+          <div class="input-wrap">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Enter your email address" />
+          </div>
+          <button class="btn-white">Subscribe to Newsletter</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" id="footer"></footer>
+
+    <script type="module" src="js/pages/product.js"></script>
+  </body>
+</html>
