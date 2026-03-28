@@ -1,7 +1,7 @@
-import { products }                               from './data/products.js';
-import { cart }                                   from './utils/cart.js';
-import { productCard, renderNavbar, renderFooter } from './utils/render.js';
-import { initSearch, initHamburger }               from './utils/helpers.js';
+import { products }                               from '../data/products.js';
+import { cart }                                   from '../utils/cart.js';
+import { productCard, renderNavbar, renderFooter } from '../utils/render.js';
+import { initSearch, initHamburger }               from '../utils/helpers.js';
 
 renderNavbar();
 renderFooter();
