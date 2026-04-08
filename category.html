@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHOP.CO – Shop</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Integral+CF:wght@400;700&family=Satoshi:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="top-bar" id="topBar">
+      <p>
+        Sign up and get 20% off to your first order. <a href="#">Sign Up Now</a>
+      </p>
+      <button
+        class="top-bar-close"
+        onclick="document.getElementById('topBar').style.display = 'none'"
+      >
+        ✕
+      </button>
+    </div>
+
+    <nav class="navbar" id="navbar"></nav>
+
+    <div class="page-wrapper">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fas fa-chevron-right"></i>
+        <span id="breadcrumbLabel">Casual</span>
+      </div>
+
+      <div class="category-layout">
+        <aside class="sidebar" id="sidebar">
+          <div class="sidebar-header">
+            <h3>Filters</h3>
+            <button onclick="closeSidebar()" aria-label="Close filters">
+              <i class="fas fa-sliders-h"></i>
+            </button>
+          </div>
+
+          <div class="filter-divider"></div>
+
+          <div class="filter-section">
+            <ul class="category-list" id="catList">
+              <li onclick="setCatFilter('t-shirts', this)">
+                T-shirts <i class="fas fa-chevron-right"></i>
+              </li>
+              <li onclick="setCatFilter('shorts', this)">
+                Shorts <i class="fas fa-chevron-right"></i>
+              </li>
+              <li onclick="setCatFilter('shirts', this)">
+                Shirts <i class="fas fa-chevron-right"></i>
+              </li>
+              <li onclick="setCatFilter('hoodie', this)">
+                Hoodie <i class="fas fa-chevron-right"></i>
+              </li>
+              <li onclick="setCatFilter('jeans', this)">
+                Jeans <i class="fas fa-chevron-right"></i>
+              </li>
+            </ul>
+          </div>
+
+          <div class="filter-divider"></div>
+
+          <div class="filter-section">
+            <h4>Price <i class="fas fa-chevron-up"></i></h4>
+            <div class="price-slider-wrap">
+              <div class="price-fill" id="priceFill"></div>
+              <input
+                type="range"
+                id="priceMin"
+                min="50"
+                max="500"
+                value="50"
+                oninput="updatePriceUI()"
+              />
+              <input
+                type="range"
+                id="priceMax"
+                min="50"
+                max="500"
+                value="500"
+                oninput="updatePriceUI()"
+              />
+            </div>
+            <div class="price-labels">
+              <span id="priceMinLabel">$50</span>
+              <span id="priceMaxLabel">$500</span>
+            </div>
+          </div>
+
+          <div class="filter-divider"></div>
+
+          <div class="filter-section">
+            <h4>Colors <i class="fas fa-chevron-up"></i></h4>
+            <div class="colors-grid">
+              <div
+                class="color-dot"
+                style="background: #00c12b"
+                onclick="this.classList.toggle('selected')"
+              ></div>
+              <div
+                class="color-dot"
+                style="background: #f44336"
+                onclick="this.classList.toggle('selected')"
+              ></div>
+              <div
+                class="color-dot"
+                style="background: #ffeb3b"
+                onclick="this.classList.toggle('selected')"
+              ></div>
+              <div
+                class="color-dot"
+                style="background: #ff9800"
+                onclick="this.classList.toggle('selected')"
+              ></div>
+              <div
+                class="color-dot"
+                style="background: #29b6f6"
+                onclick="this.classList.toggle('selected')"
+              ></div>
+              <div
+                class="color-dot selected"
+                style="background: #3f51b5"
+                onclick="this.classList.toggle('selected')"
+              ></div>
+              <div
+                class="color-dot"
+                style="background: #9c27b0"
+                onclick="this.classList.toggle('selected')"
+              ></div>
+              <div
+                class="color-dot"
+                style="background: #ff69b4"
+                onclick="this.classList.toggle('selected')"
+              ></div>
+              <div
+                class="color-dot"
+                style="background: #f5f5f5; border: 1px solid #ddd"
+                onclick="this.classList.toggle('selected')"
+              ></div>
+              <div
+                class="color-dot"
+                style="background: #000"
+                onclick="this.classList.toggle('selected')"
+              ></div>
+            </div>
+          </div>
+
+          <div class="filter-divider"></div>
+
+          <div class="filter-section">
+            <h4>Size <i class="fas fa-chevron-up"></i></h4>
+            <div class="sizes-grid">
+              <button
+                class="size-btn"
+                onclick="this.classList.toggle('selected')"
+              >
+                XX-Small
+              </button>
+              <button
+                class="size-btn"
+                onclick="this.classList.toggle('selected')"
+              >
+                X-Small
+              </button>
+              <button
+                class="size-btn"
+                onclick="this.classList.toggle('selected')"
+              >
+                Small
+              </button>
+              <button
+                class="size-btn"
+                onclick="this.classList.toggle('selected')"
+              >
+                Medium
+              </button>
+              <button
+                class="size-btn selected"
+                onclick="this.classList.toggle('selected')"
+              >
+                Large
+              </button>
+              <button
+                class="size-btn"
+                onclick="this.classList.toggle('selected')"
+              >
+                X-Large
+              </button>
+              <button
+                class="size-btn"
+                onclick="this.classList.toggle('selected')"
+              >
+                XX-Large
+              </button>
+              <button
+                class="size-btn"
+                onclick="this.classList.toggle('selected')"
+              >
+                3X-Large
+              </button>
+              <button
+                class="size-btn"
+                onclick="this.classList.toggle('selected')"
+              >
+                4X-Large
+              </button>
+            </div>
+          </div>
+
+          <div class="filter-divider"></div>
+
+          <div class="filter-section">
+            <h4>Dress Style <i class="fas fa-chevron-up"></i></h4>
+            <ul class="style-list" id="styleList">
+              <li onclick="setStyleFilter('casual', this)">
+                Casual <i class="fas fa-chevron-right"></i>
+              </li>
+              <li onclick="setStyleFilter('formal', this)">
+                Formal <i class="fas fa-chevron-right"></i>
+              </li>
+              <li onclick="setStyleFilter('party', this)">
+                Party <i class="fas fa-chevron-right"></i>
+              </li>
+              <li onclick="setStyleFilter('gym', this)">
+                Gym <i class="fas fa-chevron-right"></i>
+              </li>
+            </ul>
+          </div>
+
+          <button class="btn-apply" onclick="applyFilters()">
+            Apply Filter
+          </button>
+        </aside>
+
+        <main class="category-main">
+          <div class="category-top">
+            <div>
+              <h2 id="pageTitle">Casual</h2>
+              <p class="cat-meta" id="catMeta"></p>
+            </div>
+            <div class="sort-wrap">
+              <button class="filter-toggle-btn" onclick="openSidebar()">
+                <i class="fas fa-sliders-h"></i> Filters
+              </button>
+              Sort by:
+              <select
+                class="sort-select"
+                id="sortSelect"
+                onchange="applyFilters()"
+              >
+                <option value="popular">Most Popular</option>
+                <option value="newest">Newest</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="cat-products-grid" id="productsGrid"></div>
+
+          <div class="pagination">
+            <button class="btn-page-nav" onclick="changePage(-1)">
+              <i class="fas fa-arrow-left"></i> Previous
+            </button>
+            <div class="pagination-nums" id="paginationNums"></div>
+            <button class="btn-page-nav" onclick="changePage(1)">
+              Next <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <section class="newsletter">
+      <div class="newsletter-content">
+        <h2>Stay Upto Date About Our Latest Offers</h2>
+        <div class="newsletter-form">
+          <div class="input-wrap">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Enter your email address" />
+          </div>
+          <button class="btn-white">Subscribe to Newsletter</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" id="footer"></footer>
+
+    <script type="module" src="js/pages/category.js"></script>
+  </body>
+</html>

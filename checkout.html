@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHOP.CO – Checkout</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Integral+CF:wght@700&family=Satoshi:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+   <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+   
+    <div id="navbar-placeholder"></div>
+
+    <div class="checkout-wrapper">
+  
+      <div class="checkout-breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fas fa-chevron-right"></i>
+        <a href="cart.html">Cart</a>
+        <i class="fas fa-chevron-right"></i>
+        <span class="active">Checkout</span>
+      </div>
+
+      <h1 class="checkout-title">Checkout</h1>
+
+     
+      <div class="checkout-steps">
+        <div class="step done" id="step1">
+          <div class="step-num"><i class="fas fa-check step-done-icon"></i></div>
+          <span>Cart</span>
+        </div>
+        <div class="step-divider active"></div>
+        <div class="step active" id="step2">
+          <div class="step-num">2</div>
+          <span>Details</span>
+        </div>
+        <div class="step-divider" id="div2"></div>
+        <div class="step" id="step3">
+          <div class="step-num">3</div>
+          <span>Payment</span>
+        </div>
+        <div class="step-divider" id="div3"></div>
+        <div class="step" id="step4">
+          <div class="step-num">4</div>
+          <span>Confirm</span>
+        </div>
+      </div>
+
+      
+      <div class="empty-checkout" id="emptyState" style="display:none;">
+        <i class="fas fa-shopping-cart"></i>
+        <h2>Your cart is empty</h2>
+        <p>Add some items before checking out.</p>
+        <a href="category.html" class="btn-filled" style="display:inline-flex;">Shop Now</a>
+      </div>
+
+      
+      <div class="checkout-grid" id="checkoutGrid">
+      
+        <div class="checkout-left">
+
+         
+          <div class="checkout-panel" id="panelShipping">
+            <div class="panel-title">
+              Shipping Information
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name </label>
+                <input type="text" id="firstName" placeholder="John" />
+                <span class="field-error" id="errFirstName">Required</span>
+              </div>
+              <div class="form-group">
+                <label>Last Name </label>
+                <input type="text" id="lastName" placeholder="Doe" />
+                <span class="field-error" id="errLastName">Required</span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group full">
+                <label>Email Address </label>
+                <input type="email" id="email" placeholder="john@example.com" />
+                <span class="field-error" id="errEmail">Enter a valid email</span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group full">
+                <label>Phone Number </label>
+                <input type="tel" id="phone" placeholder="+20 1xx xxx xxxx" />
+                <span class="field-error" id="errPhone">Required</span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group full">
+                <label>Street Address </label>
+                <input type="text" id="address" placeholder="123 Main Street, Apt 4B" />
+                <span class="field-error" id="errAddress">Required</span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>City </label>
+                <input type="text" id="city" placeholder="Cairo" />
+                <span class="field-error" id="errCity">Required</span>
+              </div>
+              <div class="form-group">
+                <label>Country </label>
+                <select id="country">
+                  <option value="">Select country</option>
+                  <option value="EG" selected>Egypt</option>
+                  <option value="US">United States</option>
+                  <option value="GB">United Kingdom</option>
+                  <option value="AE">UAE</option>
+                  <option value="SA">Saudi Arabia</option>
+                  <option value="KW">Kuwait</option>
+                  <option value="QA">Qatar</option>
+                  <option value="JO">Jordan</option>
+                  <option value="LB">Lebanon</option>
+                </select>
+                <span class="field-error" id="errCountry">Required</span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>ZIP / Postal Code</label>
+                <input type="text" id="zip" placeholder="12345" />
+              </div>
+              <div class="form-group">
+                <label>State / Region</label>
+                <input type="text" id="state" placeholder="Giza" />
+              </div>
+            </div>
+          </div>
+
+         
+          <div class="checkout-panel">
+            <div class="panel-title">Shipping Method</div>
+            <div class="payment-options">
+              <label class="payment-option selected" id="shipStandard">
+                <input type="radio" name="shipping" value="standard" checked />
+                <div class="payment-option-info">
+                  <div class="payment-option-name">Standard Delivery</div>
+                  <div class="payment-option-desc">5–7 business days</div>
+                </div>
+                <div style="font-weight:700;font-size:15px;">Free</div>
+              </label>
+              <label class="payment-option" id="shipExpress">
+                <input type="radio" name="shipping" value="express" />
+                <div class="payment-option-info">
+                  <div class="payment-option-name">Express Delivery</div>
+                  <div class="payment-option-desc">1–3 business days</div>
+                </div>
+                <div style="font-weight:700;font-size:15px;">$15.00</div>
+              </label>
+            </div>
+          </div>
+
+         
+          <div class="checkout-panel" id="panelPayment">
+            <div class="panel-title">Payment Method</div>
+            <div class="payment-options">
+
+             
+              <label class="payment-option selected" id="payCard">
+                <input type="radio" name="payment" value="card" checked />
+                <div class="payment-option-info">
+                  <div class="payment-option-name">Credit / Debit Card</div>
+                  <div class="payment-option-desc">Visa, Mastercard, Amex</div>
+                </div>
+                <div class="payment-icons">
+                  <img src="images/visa.png" alt="Visa" onerror="this.style.display='none'" />
+                  <img src="images/mastercard.png" alt="MC" onerror="this.style.display='none'" />
+                </div>
+              </label>
+
+             
+              <label class="payment-option" id="payPaypal">
+                <input type="radio" name="payment" value="paypal" />
+                <div class="payment-option-info">
+                  <div class="payment-option-name">PayPal</div>
+                  <div class="payment-option-desc">Fast & secure checkout</div>
+                </div>
+                <div class="payment-icons">
+                  <img src="images/paypal.png" alt="PayPal" onerror="this.style.display='none'" />
+                </div>
+              </label>
+
+              
+              <label class="payment-option" id="payCash">
+                <input type="radio" name="payment" value="cash" />
+                <div class="payment-option-info">
+                  <div class="payment-option-name">Cash on Delivery</div>
+                  <div class="payment-option-desc">Pay when you receive</div>
+                </div>
+                <div style="font-size:22px;">💵</div>
+              </label>
+
+            </div>
+
+           
+            <div class="card-fields show" id="cardFields">
+              <div class="form-row" style="margin-top:20px;">
+                <div class="form-group full">
+                  <label>Cardholder Name </label>
+                  <input type="text" id="cardName" placeholder="John Doe" />
+                  <span class="field-error" id="errCardName">Required</span>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group full">
+                  <label>Card Number </label>
+                  <div class="card-number-wrap">
+                    <input type="text" id="cardNumber" placeholder="0000 0000 0000 0000" maxlength="19" />
+                    <i class="fas fa-credit-card card-brand-icon" id="cardBrandIcon"></i>
+                  </div>
+                  <span class="field-error" id="errCardNumber">Enter a valid card number</span>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Expiry Date </label>
+                  <input type="text" id="cardExpiry" placeholder="MM / YY" maxlength="7" />
+                  <span class="field-error" id="errCardExpiry">Invalid date</span>
+                </div>
+                <div class="form-group">
+                  <label>CVV </label>
+                  <input type="text" id="cardCvv" placeholder="123" maxlength="4" />
+                  <span class="field-error" id="errCardCvv">Required</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+       
+        <div class="order-summary">
+          <h2>Order Summary</h2>
+
+          <div class="summary-items" id="summaryItems">
+           
+          </div>
+
+          <div class="promo-row">
+            <input type="text" id="promoInput" placeholder="Promo code" />
+            <button onclick="applyCheckoutPromo()">Apply</button>
+          </div>
+          <div class="promo-msg" id="promoMsg"></div>
+
+          <div class="summary-divider"></div>
+          <div class="summary-row"><span>Subtotal</span><span id="subtotalDisplay">$0.00</span></div>
+          <div class="summary-row discount" id="discountRow" style="display:none;">
+            <span>Discount (<span id="discountLabel">0</span>%)</span>
+            <span id="discountDisplay">-$0.00</span>
+          </div>
+          <div class="summary-row" id="shippingRow"><span>Shipping</span><span id="shippingDisplay">Free</span></div>
+          <div class="summary-row total">
+            <span>Total</span>
+            <span id="totalDisplay">$0.00</span>
+          </div>
+
+          <button class="place-order-btn" id="placeOrderBtn" onclick="placeOrder()">
+            <i class="fas fa-lock"></i>
+            Place Order
+          </button>
+          <div class="secure-note">
+            <i class="fas fa-shield-alt"></i>
+            Your payment is 100% secure & encrypted
+          </div>
+        </div>
+      </div>
+    </div>
+
+   
+    <div class="success-overlay" id="successOverlay">
+      <div class="success-card">
+        <div class="success-icon"><i class="fas fa-check"></i></div>
+        <h2>Order Placed! </h2>
+        <p>Thank you for your purchase. We'll send you a confirmation email shortly.</p>
+        <div class="success-order-num">
+          Order #<span id="orderNumber">SHOP-000000</span>
+        </div>
+        <div class="success-actions">
+          <button class="btn-outline" onclick="window.location.href='category.html'">Continue Shopping</button>
+          <a href="index.html" class="btn-filled">Back to Home</a>
+        </div>
+      </div>
+    </div>
+
+   
+    <div id="footer-placeholder"></div>
+
+    <script type="module" src="js/pages/checkout.js"></script>
+  </body>
+</html>
